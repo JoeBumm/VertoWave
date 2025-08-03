@@ -60,16 +60,24 @@ function GameGrid() {
     }
 
     function reset() {
-        const cells = document.querySelectorAll('.gameGrid div');
-        playState.fill(-1);
-        cells.forEach(cell => (cell.textContent = ''));
-        turn = 1;
-        plays = 0;
+        const grid = document.getElementById("gameGrid");
+        grid.classList.add("explode");
+
+        setTimeout(() => {
+            grid.classList.remove("explode");
+
+            const cells = document.querySelectorAll('.gameGrid div');
+            playState.fill(-1);
+            cells.forEach(cell => (cell.textContent = ''));
+            turn = 1;
+            plays = 0;
+        }, 500);
     }
+
 
     return (
         <>
-            <div className='gameGrid'>
+            <div className='gameGrid' id="gameGrid">
                 <div onClick={() => boxClick(0)}></div>
                 <div onClick={() => boxClick(1)}></div>
                 <div onClick={() => boxClick(2)}></div>
