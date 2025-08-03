@@ -1,0 +1,50 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup {
+  padding: 20px 40px;
+  border-radius: 25px;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.popup-overlay button {
+  padding: 10px;
+  background-color: #e94989;
+  border-style: none;
+  border-radius: 8px;
+  color: #691235;
+  align-self: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
